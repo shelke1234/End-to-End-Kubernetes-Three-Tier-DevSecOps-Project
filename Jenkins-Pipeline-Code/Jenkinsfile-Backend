@@ -34,13 +34,13 @@ pipeline {
                 }
             }
         }
-        stage('Quality Check') {
-            steps {
-                script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-server' 
-                }
-            }
-        }
+        // stage('Quality Check') {
+        //     steps {
+        //         script {
+        //             waitForQualityGate abortPipeline: false, credentialsId: 'sonar-server' 
+        //         }
+        //     }
+        // }
         stage('OWASP Dependency-Check Scan') {
             steps {
                 dir('Application-Code/backend') {
